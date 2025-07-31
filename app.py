@@ -1,26 +1,36 @@
 import streamlit as st
+from PIL import Image
 
 # ---- CONFIG ----
-st.set_page_config(
-    page_title="Jahanvi Dave | Data Science Portfolio",
-    layout="wide",
-    initial_sidebar_state="auto"
-)
+st.set_page_config(page_title="Jahanvi Dave | Data Science Portfolio", layout="wide")
 
-# ---- THEME ----
+# ---- CUSTOM THEME ----
 st.markdown("""
     <style>
-    body {
-        background-color: #0c0f1a;
-        color: #f5f5f5;
+    html, body, [class*="css"]  {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #0f1117;
+        color: #f1f1f1;
     }
     .stButton>button {
         background-color: #ff4b4b;
         color: white;
-        border-radius: 8px;
+        border: None;
+        padding: 0.5em 1em;
+        border-radius: 10px;
+        font-weight: 600;
     }
-    .stMarkdown, .stHeader, .stSubheader {
-        font-family: 'Helvetica', sans-serif;
+    .stDownloadButton>button {
+        background-color: #1f77b4;
+        color: white;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+    h1, h2, h3 {
+        color: #fca311;
+    }
+    a {
+        color: #4da6ff;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -28,13 +38,11 @@ st.markdown("""
 # ---- HEADER ----
 st.title("👩‍💻 Jahanvi Dave")
 st.subheader("Aspiring Data Scientist | Python • SQL • ML • NLP")
+
+# ---- CALL TO ACTION ----
 st.success("💼 Actively exploring entry-level roles in Data Science and Machine Learning.")
 
-st.write(
-    "Aspiring data scientist skilled in Python, SQL, and machine learning with hands-on experience "
-    "in real-world projects involving NLP, clustering, and time series forecasting. Committed to continuous "
-    "learning and contributing data-driven solutions in a professional environment."
-)
+st.write("Aspiring data scientist skilled in Python, SQL, and machine learning with hands-on experience in real-world projects involving NLP, clustering, and time series forecasting. Committed to continuous learning and contributing data-driven solutions in a professional environment.")
 
 with st.container():
     st.write("---")
@@ -48,18 +56,14 @@ with st.container():
         - 🔗 [LinkedIn](https://www.linkedin.com/in/jahanvi-8271a7214)  
         """)
     with col2:
-        st.image("https://avatars.githubusercontent.com/u/9919?s=200&v=4", width=120)
+        st.image("https://media.licdn.com/dms/image/D4D03AQEQmlJXsLdQbA/profile-displayphoto-shrink_800_800/0/1689454569835?e=2147483647&v=beta&t=2KQ7i_lDLO9MFqMfyl9r2N2Ccvf1BTKO0nN1nFQmrVU", width=160)
 
 # ---- PROJECTS ----
 st.write("---")
 st.header("📊 Projects")
 
 st.subheader("1. Credit Card Fraud Detection")
-st.image(
-    "https://raw.githubusercontent.com/plotly/datasets/master/images/roc_curve.png",
-    caption="ROC Curve Example",
-    use_container_width=True
-)
+st.image("https://raw.githubusercontent.com/plotly/datasets/master/images/roc_curve.png", caption="ROC Curve Example", use_container_width=True)
 st.markdown("""
 Built a machine learning pipeline to detect fraudulent transactions using imbalanced data techniques like SMOTE.  
 Achieved 91% precision using Random Forest and Logistic Regression.  
@@ -67,11 +71,7 @@ Achieved 91% precision using Random Forest and Logistic Regression.
 """)
 
 st.subheader("2. Employee Attrition Prediction")
-st.image(
-    "https://raw.githubusercontent.com/slundberg/shap/master/docs/artwork/shap_summary_plot.png",
-    caption="SHAP Summary Plot",
-    use_container_width=True
-)
+st.image("https://raw.githubusercontent.com/slundberg/shap/master/docs/artwork/shap_summary_plot.png", caption="SHAP Summary Plot", use_container_width=True)
 st.markdown("""
 Used HR analytics and explainable models (SHAP + XGBoost) to predict employee turnover.  
 Delivered clear insights for HR policy decisions and retention strategies.  
@@ -79,11 +79,7 @@ Delivered clear insights for HR policy decisions and retention strategies.
 """)
 
 st.subheader("3. Movie Recommendation System")
-st.image(
-    "https://raw.githubusercontent.com/zyxue/stanford-cs329s/master/img/cbf.png",
-    caption="Content-Based Filtering Overview",
-    use_container_width=True
-)
+st.image("https://raw.githubusercontent.com/zyxue/stanford-cs329s/master/img/cbf.png", caption="Content-Based Filtering Overview", use_container_width=True)
 st.markdown("""
 Built a content-based recommender system using TF-IDF vectorization and cosine similarity.  
 Suggested movies based on genres, descriptions, and cast.  
