@@ -1,17 +1,40 @@
 import streamlit as st
-from PIL import Image
 
 # ---- CONFIG ----
-st.set_page_config(page_title="Jahanvi Dave | Data Science Portfolio", layout="wide")
+st.set_page_config(
+    page_title="Jahanvi Dave | Data Science Portfolio",
+    layout="wide",
+    initial_sidebar_state="auto"
+)
+
+# ---- THEME ----
+st.markdown("""
+    <style>
+    body {
+        background-color: #0c0f1a;
+        color: #f5f5f5;
+    }
+    .stButton>button {
+        background-color: #ff4b4b;
+        color: white;
+        border-radius: 8px;
+    }
+    .stMarkdown, .stHeader, .stSubheader {
+        font-family: 'Helvetica', sans-serif;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # ---- HEADER ----
 st.title("👩‍💻 Jahanvi Dave")
 st.subheader("Aspiring Data Scientist | Python • SQL • ML • NLP")
-
-# ---- CALL TO ACTION ----
 st.success("💼 Actively exploring entry-level roles in Data Science and Machine Learning.")
 
-st.write("Aspiring data scientist skilled in Python, SQL, and machine learning with hands-on experience in real-world projects involving NLP, clustering, and time series forecasting. Committed to continuous learning and contributing data-driven solutions in a professional environment.")
+st.write(
+    "Aspiring data scientist skilled in Python, SQL, and machine learning with hands-on experience "
+    "in real-world projects involving NLP, clustering, and time series forecasting. Committed to continuous "
+    "learning and contributing data-driven solutions in a professional environment."
+)
 
 with st.container():
     st.write("---")
@@ -25,14 +48,18 @@ with st.container():
         - 🔗 [LinkedIn](https://www.linkedin.com/in/jahanvi-8271a7214)  
         """)
     with col2:
-        st.image("https://avatars.githubusercontent.com/u/9919?s=200&v=4", width=120)  # Placeholder logo
+        st.image("https://avatars.githubusercontent.com/u/9919?s=200&v=4", width=120)
 
 # ---- PROJECTS ----
 st.write("---")
 st.header("📊 Projects")
 
 st.subheader("1. Credit Card Fraud Detection")
-st.image("https://miro.medium.com/v2/resize:fit:1200/format:webp/1*rw3eRCdD9h9NqGnWTYeB1w.png", caption="ROC Curve Example", use_column_width=True)
+st.image(
+    "https://raw.githubusercontent.com/plotly/datasets/master/images/roc_curve.png",
+    caption="ROC Curve Example",
+    use_container_width=True
+)
 st.markdown("""
 Built a machine learning pipeline to detect fraudulent transactions using imbalanced data techniques like SMOTE.  
 Achieved 91% precision using Random Forest and Logistic Regression.  
@@ -40,7 +67,11 @@ Achieved 91% precision using Random Forest and Logistic Regression.
 """)
 
 st.subheader("2. Employee Attrition Prediction")
-st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Shap_example.png/800px-Shap_example.png", caption="SHAP Summary Plot", use_column_width=True)
+st.image(
+    "https://raw.githubusercontent.com/slundberg/shap/master/docs/artwork/shap_summary_plot.png",
+    caption="SHAP Summary Plot",
+    use_container_width=True
+)
 st.markdown("""
 Used HR analytics and explainable models (SHAP + XGBoost) to predict employee turnover.  
 Delivered clear insights for HR policy decisions and retention strategies.  
@@ -48,7 +79,11 @@ Delivered clear insights for HR policy decisions and retention strategies.
 """)
 
 st.subheader("3. Movie Recommendation System")
-st.image("https://static.javatpoint.com/tutorial/recommendation-system/images/content-based-recommendation-system.png", caption="Content-Based Filtering Overview", use_column_width=True)
+st.image(
+    "https://raw.githubusercontent.com/zyxue/stanford-cs329s/master/img/cbf.png",
+    caption="Content-Based Filtering Overview",
+    use_container_width=True
+)
 st.markdown("""
 Built a content-based recommender system using TF-IDF vectorization and cosine similarity.  
 Suggested movies based on genres, descriptions, and cast.  
