@@ -142,7 +142,7 @@ with open("Jahanvi_CV_CoverLetter.pdf", "rb") as file:
     )
 
 st.markdown("""
-<iframe src="Jahanvi_CV_CoverLetter.pdf" width="100%" height="800px" style="border: none; border-radius: 10px;"></iframe>
+<iframe src="https://raw.githubusercontent.com/Jahanvi3008/portfolio-assets/main/Jahanvi_CV_CoverLetter.pdf" width="100%" height="800px" style="border: none; border-radius: 10px;"></iframe>
 """, unsafe_allow_html=True)
 
 # ---- CONTACT ----
