@@ -4,51 +4,6 @@ from PIL import Image
 # ---- CONFIG ----
 st.set_page_config(page_title="Jahanvi Dave | Data Science Portfolio", layout="wide")
 
-# ---- CUSTOM THEME ----
-st.markdown("""
-    <style>
-    html, body, [class*="css"]  {
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to right, #0f1117, #1c1f2e);
-        color: #f1f1f1;
-    }
-    .stButton>button {
-        background-color: #ff6f61;
-        color: white;
-        padding: 0.6em 1.2em;
-        border: none;
-        border-radius: 10px;
-        font-weight: 600;
-        transition: all 0.3s ease-in-out;
-    }
-    .stButton>button:hover {
-        background-color: #ff8a65;
-    }
-    .stDownloadButton>button {
-        background-color: #0077cc;
-        color: white;
-        border-radius: 10px;
-        font-weight: 600;
-        padding: 0.6em 1.2em;
-        transition: background-color 0.3s ease;
-    }
-    .stDownloadButton>button:hover {
-        background-color: #3399ff;
-    }
-    h1, h2, h3 {
-        color: #ffcc00;
-    }
-    a {
-        color: #66d9ef;
-        font-weight: 600;
-    }
-    .stMarkdown p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-</style>
-""", unsafe_allow_html=True)
-
 # ---- HEADER ----
 st.title("👩‍💻 Jahanvi Dave")
 st.subheader("Aspiring Data Scientist | Python • SQL • ML • NLP")
@@ -57,6 +12,20 @@ st.subheader("Aspiring Data Scientist | Python • SQL • ML • NLP")
 st.success("💼 Actively exploring entry-level roles in Data Science and Machine Learning.")
 
 st.write("Aspiring data scientist skilled in Python, SQL, and machine learning with hands-on experience in real-world projects involving NLP, clustering, and time series forecasting. Committed to continuous learning and contributing data-driven solutions in a professional environment.")
+
+with st.container():
+    st.write("---")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        - 📍 **Preferred Location**: Europe, India (Bangalore, Pune, Mumbai, Ahmedabad), Remote  
+        - 📧 **Email**: jahanvi08dave@gmail.com  
+        - 📱 **Phone**: +91 81413 00801  
+        - 🔗 [GitHub](https://github.com/Jahanvi3008)  
+        - 🔗 [LinkedIn](https://www.linkedin.com/in/jahanvi-8271a7214)  
+        """)
+    with col2:
+        st.image("https://avatars.githubusercontent.com/u/9919?s=200&v=4", width=120)  # Placeholder logo
 
 # ---- PROJECTS ----
 st.write("---")
@@ -132,20 +101,13 @@ st.markdown("""
 # ---- RESUME DOWNLOAD ----
 st.write("---")
 st.header("📄 Resume")
-
-st.download_button(
-    label="📄 Download My Resume",
-    data="https://raw.githubusercontent.com/Jahanvi3008/portfolio-assets/main/Jahanvi_CV_CoverLetter.pdf",
-    file_name="Jahanvi_CV_CoverLetter.pdf",
-    mime="application/pdf"
-)
+with open("Jahanvi_Resume.pdf", "rb") as file:
+    st.download_button(
         label="📄 Download My Resume",
         data=file,
-        file_name="Jahanvi_CV_CoverLetter.pdf",
+        file_name="Jahanvi_Dave_Data_Scientist_Resume.pdf",
         mime="application/pdf"
     )
-
-
 
 # ---- CONTACT ----
 st.write("---")
