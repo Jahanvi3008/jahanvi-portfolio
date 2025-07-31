@@ -9,30 +9,44 @@ st.markdown("""
     <style>
     html, body, [class*="css"]  {
         font-family: 'Segoe UI', sans-serif;
-        background-color: #0f1117;
+        background: linear-gradient(to right, #0f1117, #1c1f2e);
         color: #f1f1f1;
     }
     .stButton>button {
-        background-color: #ff4b4b;
+        background-color: #ff6f61;
         color: white;
-        border: None;
-        padding: 0.5em 1em;
+        padding: 0.6em 1.2em;
+        border: none;
         border-radius: 10px;
         font-weight: 600;
+        transition: all 0.3s ease-in-out;
+    }
+    .stButton>button:hover {
+        background-color: #ff8a65;
     }
     .stDownloadButton>button {
-        background-color: #1f77b4;
+        background-color: #0077cc;
         color: white;
         border-radius: 10px;
         font-weight: 600;
+        padding: 0.6em 1.2em;
+        transition: background-color 0.3s ease;
+    }
+    .stDownloadButton>button:hover {
+        background-color: #3399ff;
     }
     h1, h2, h3 {
-        color: #fca311;
+        color: #ffcc00;
     }
     a {
-        color: #4da6ff;
+        color: #66d9ef;
+        font-weight: 600;
     }
-    </style>
+    .stMarkdown p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+</style>
 """, unsafe_allow_html=True)
 
 # ---- HEADER ----
@@ -44,43 +58,52 @@ st.success("💼 Actively exploring entry-level roles in Data Science and Machin
 
 st.write("Aspiring data scientist skilled in Python, SQL, and machine learning with hands-on experience in real-world projects involving NLP, clustering, and time series forecasting. Committed to continuous learning and contributing data-driven solutions in a professional environment.")
 
-with st.container():
-    st.write("---")
-    col1, col2 = st.columns([2, 1])
-    with col1:
-        st.markdown("""
-        - 📍 **Preferred Location**: Europe, India (Bangalore, Pune, Mumbai, Ahmedabad), Remote  
-        - 📧 **Email**: jahanvi08dave@gmail.com  
-        - 📱 **Phone**: +91 81413 00801  
-        - 🔗 [GitHub](https://github.com/Jahanvi3008)  
-        - 🔗 [LinkedIn](https://www.linkedin.com/in/jahanvi-8271a7214)  
-        """)
-    with col2:
-        st.image("https://media.licdn.com/dms/image/D4D03AQEQmlJXsLdQbA/profile-displayphoto-shrink_800_800/0/1689454569835?e=2147483647&v=beta&t=2KQ7i_lDLO9MFqMfyl9r2N2Ccvf1BTKO0nN1nFQmrVU", width=160)
-
 # ---- PROJECTS ----
 st.write("---")
 st.header("📊 Projects")
 
-st.subheader("1. Credit Card Fraud Detection")
-st.image("https://raw.githubusercontent.com/plotly/datasets/master/images/roc_curve.png", caption="ROC Curve Example", use_container_width=True)
+st.subheader("1. Credit Card Fraud Detection 🔐")
 st.markdown("""
+📌 **Key Snippet:**
+```python
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+preds = clf.predict(X_test)
+```
+📈 **Metric**: 91% Precision on Imbalanced Data
+
 Built a machine learning pipeline to detect fraudulent transactions using imbalanced data techniques like SMOTE.  
 Achieved 91% precision using Random Forest and Logistic Regression.  
 🔗 [View on GitHub](https://github.com/Jahanvi3008)
 """)
 
-st.subheader("2. Employee Attrition Prediction")
-st.image("https://raw.githubusercontent.com/slundberg/shap/master/docs/artwork/shap_summary_plot.png", caption="SHAP Summary Plot", use_container_width=True)
+st.subheader("2. Employee Attrition Prediction 🧑‍💼")
 st.markdown("""
+📌 **Key Snippet:**
+```python
+import shap
+explainer = shap.TreeExplainer(model)
+shap_values = explainer.shap_values(X)
+shap.summary_plot(shap_values, X)
+```
+📉 **Insight**: SHAP reveals Work-Life Balance as top factor
+
 Used HR analytics and explainable models (SHAP + XGBoost) to predict employee turnover.  
 Delivered clear insights for HR policy decisions and retention strategies.  
 🔗 [View on GitHub](https://github.com/Jahanvi3008)
 """)
 
-st.subheader("3. Movie Recommendation System")
-st.image("https://raw.githubusercontent.com/zyxue/stanford-cs329s/master/img/cbf.png", caption="Content-Based Filtering Overview", use_container_width=True)
+st.subheader("3. Movie Recommendation System 🎬")
 st.markdown("""
+📌 **Key Snippet:**
+```python
+from sklearn.metrics.pairwise import cosine_similarity
+sim_scores = cosine_similarity(tfidf_matrix)
+recommendations = get_top_movies(sim_scores)
+```
+🎯 **Use Case**: Personalized movie suggestions based on genre & plot
+
 Built a content-based recommender system using TF-IDF vectorization and cosine similarity.  
 Suggested movies based on genres, descriptions, and cast.  
 🔗 [View on GitHub](https://github.com/Jahanvi3008)
