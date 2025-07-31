@@ -132,13 +132,18 @@ st.markdown("""
 # ---- RESUME DOWNLOAD ----
 st.write("---")
 st.header("📄 Resume")
-with open("Jahanvi_Resume.pdf", "rb") as file:
+
+with open("Jahanvi_CV_CoverLetter.pdf", "rb") as file:
     st.download_button(
         label="📄 Download My Resume",
         data=file,
-        file_name="Jahanvi_Dave_Data_Scientist_Resume.pdf",
+        file_name="Jahanvi_CV_CoverLetter.pdf",
         mime="application/pdf"
     )
+
+st.markdown("""
+<iframe src="Jahanvi_CV_CoverLetter.pdf" width="100%" height="800px" style="border: none; border-radius: 10px;"></iframe>
+""", unsafe_allow_html=True)
 
 # ---- CONTACT ----
 st.write("---")
