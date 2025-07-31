@@ -133,8 +133,12 @@ st.markdown("""
 st.write("---")
 st.header("📄 Resume")
 
-with open("Jahanvi_CV_CoverLetter.pdf", "rb") as file:
-    st.download_button(
+st.download_button(
+    label="📄 Download My Resume",
+    data="https://raw.githubusercontent.com/Jahanvi3008/portfolio-assets/main/Jahanvi_CV_CoverLetter.pdf",
+    file_name="Jahanvi_CV_CoverLetter.pdf",
+    mime="application/pdf"
+)
         label="📄 Download My Resume",
         data=file,
         file_name="Jahanvi_CV_CoverLetter.pdf",
